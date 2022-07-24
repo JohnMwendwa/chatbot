@@ -4,7 +4,8 @@
   "description": "Real-time chat application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"node server/index.js",
+    "dev":"nodemon server/index.js"
   },
   "keywords": [],
   "author": "John Mwendwa",
