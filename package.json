@@ -7,6 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author":"John Mwendwa",
-  "license": "ISC"
+  "author": "John Mwendwa",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^4.5.1"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5"
+  }
 }
