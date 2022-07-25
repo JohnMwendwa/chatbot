@@ -31,7 +31,8 @@ io.on('connection',(socket)=>{
     })
 
     socket.on('newMessage',(data)=>{
-        socket.emit('message',generateMessage(data))
+        const user = getUser(socket.id)
+        io.to(user.room).emit('message',generateMessage(data,user.username))
     })   
 
 
