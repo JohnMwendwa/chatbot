@@ -10,6 +10,8 @@ function ChatRoom() {
       socket.on('message',(data)=>{
         setMessage([...message,data])
       })
+
+      return ()=> socket.off('message')
     },[socket,message])
  
     const sendMessage =(e)=>{
