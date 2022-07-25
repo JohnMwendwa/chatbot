@@ -1,10 +1,15 @@
+import {Routes,Route} from 'react-router-dom';
+import ChatRoom from './components/ChatRoom';
 import RegisterForm from './components/RegisterForm';
 
 function App() {
 
   return (
     <div className="App">
-      <RegisterForm />
+      <Routes>
+        <Route path='/' element={<RegisterForm />} />
+        <Route path='/chat' element={<ChatRoom/>} />
+      </Routes>
     </div>
   );
 }
