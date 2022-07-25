@@ -1,9 +1,8 @@
-import {useEffect,useState} from 'react';
-import io from 'socket.io-client';
-
-const socket = io.connect('http://localhost:3001')
+import {useEffect,useState,useContext} from 'react';
+import {ConnectionContext} from '../context/connectionContext.js'
 
 function ChatRoom() {
+    const socket = useContext(ConnectionContext);
     const [message,setMessage] = useState([]);
     const [newMessage,setNewMessage] = useState('')
 
@@ -11,7 +10,7 @@ function ChatRoom() {
       socket.on('message',(data)=>{
         setMessage([...message,data])
       })
-    },[message])
+    },[socket,message])
  
     const sendMessage =(e)=>{
         e.preventDefault();
