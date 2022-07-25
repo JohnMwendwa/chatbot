@@ -32,6 +32,8 @@ function ChatRoom() {
            type="text" 
            value={newMessage}
            onChange={(e)=>setNewMessage(e.target.value)}
+           placeholder='new message'
+           required
           />
          <button>Send</button>
         </form>
