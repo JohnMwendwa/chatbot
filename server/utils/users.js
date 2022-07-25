@@ -39,3 +39,10 @@ const getUser =(id)=>users.find((user)=>user.id === id)
 
 // Get all users in a room
 const getUsersInRoom =(room)=> users.filter(user=>user.room === room)
+
+module.exports ={
+    addUser,
+    removeUser,
+    getUser,
+    getUsersInRoom
+}
