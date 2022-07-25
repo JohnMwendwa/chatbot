@@ -17,6 +17,9 @@ app.use(cors)
 
 io.on('connection',(socket)=>{
     socket.emit('message',generateMessage('welcome'))
+    socket.on('newMessage',(data)=>{
+        socket.emit('message',generateMessage(data))
+    })
 })
 
 server.listen(PORT,()=>{
