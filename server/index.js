@@ -27,7 +27,7 @@ io.on('connection',(socket)=>{
         socket.join(user.room)
 
         socket.emit('message',generateMessage('welcome'))
-        socket.broadcast.to(user.room).emit(`${user.username} has joined the chat!`)
+        socket.broadcast.to(user.room).emit('message',generateMessage(`${user.username} has joined the chat!`))
         io.to(user.room).emit('loggedUsers',{
             room:user.room,
             users:getUsersInRoom(user.room)
@@ -47,7 +47,7 @@ io.on('connection',(socket)=>{
        
        if(user){
         io.to(user.room).emit('message',generateMessage(`${user.username} has left!`))
-        onabort.to(user.room).emit('loggedUsers',{
+        io.to(user.room).emit('loggedUsers',{
             room:user.room,
             users:getUsersInRoom(user.room)
         })
