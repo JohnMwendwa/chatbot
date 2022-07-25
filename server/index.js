@@ -19,20 +19,29 @@ app.use(cors)
 io.on('connection',(socket)=>{
     socket.on('join',(userDetails,callback)=>{
         const {error,user} = addUser({id:socket.id,...userDetails})
-        
+
         if(error){
           return callback(error)
         }
 
         socket.join(user.room)
         socket.emit('message',generateMessage('welcome'))
-        socket.broadcast.to(user.room).emit(`${user.username} has joined the chat`)
+        socket.broadcast.to(user.room).emit(`${user.username} has joined the chat!`)
         callback()
     })
 
     socket.on('newMessage',(data)=>{
         socket.emit('message',generateMessage(data))
     })   
+
+
+    socket.on('disconnect',()=>{
+       const user = removeUser(socket.id);
+       
+       if(user){
+        io.to(user.room).emit('message',generateMessage(`${user.username} has left!`))
+       }
+    })
 })
 
 server.listen(PORT,()=>{
