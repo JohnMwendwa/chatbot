@@ -1,18 +1,20 @@
-import React, { useState } from 'react'
-import io from 'socket.io-client';
-
-const socket = io.connect('http://localhost:3001')
+import React, { useState,useContext} from 'react';
+import { useNavigate } from 'react-router-dom';
+import {ConnectionContext} from '../context/connectionContext.js';
 
 function RegisterForm() {
+    const socket = useContext(ConnectionContext);
     const [username,setUsername] = useState('');
-    const [room,setRoom] = useState('')
-    const [errorMessage,setErrorMessage] = useState('')
+    const [room,setRoom] = useState('');
+    const [errorMessage,setErrorMessage] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit =(e)=>{
         e.preventDefault();
         socket.emit('join',{username,room},(error)=>{
             setErrorMessage(error)
         })
+        navigate('/chat')
     }
   return (
 <div>
