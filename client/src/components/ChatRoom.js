@@ -1,5 +1,6 @@
 import {useEffect,useState,useContext} from 'react';
-import {ConnectionContext} from '../context/connectionContext.js'
+import {ConnectionContext} from '../context/connectionContext.js';
+import Message from './Message.js';
 
 function ChatRoom() {
     const socket = useContext(ConnectionContext);
@@ -24,7 +25,7 @@ function ChatRoom() {
     <div>
          <h2>Messages</h2>
         <ul>
-          {message.map(msg=><li key={msg.id}>{msg.msg}</li>)}
+          {message.map(msg=><Message message={msg} key={msg.id}/>)}
         </ul>
         <form onSubmit={sendMessage}>
           <input 
