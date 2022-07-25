@@ -1,11 +1,23 @@
 import React, { useState } from 'react'
+import io from 'socket.io-client';
+
+const socket = io.connect('http://localhost:3001')
 
 function RegisterForm() {
     const [username,setUsername] = useState('');
     const [room,setRoom] = useState('')
-    
+    const [errorMessage,setErrorMessage] = useState('')
+
+    const handleSubmit =(e)=>{
+        e.preventDefault();
+        socket.emit('join',{username,room},(error)=>{
+            setErrorMessage(error)
+        })
+    }
   return (
-    <form >
+<div>
+   {errorMessage && <p>{errorMessage}</p>}
+<form onSubmit={handleSubmit}>
         <input 
         type="text" 
         value={username}
@@ -23,6 +35,7 @@ function RegisterForm() {
 
          <button>Join</button>
     </form>
+</div>
   )
 }
 
