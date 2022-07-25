@@ -33,3 +33,7 @@ const removeUser =(id)=>{
     return users.splice(idx,1)[0]
    }
 }
+
+// Get a single user
+const getUser =(id)=>users.find((user)=>user.id === id)
+
