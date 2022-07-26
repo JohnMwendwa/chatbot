@@ -17,25 +17,27 @@ function RegisterForm() {
         navigate('/chat')
     }
   return (
-<div>
-   {errorMessage && <p>{errorMessage}</p>}
-<form onSubmit={handleSubmit}>
+<div className='RegisterForm'>
+   {errorMessage && <p className='RegisterForm__error'>{errorMessage}</p>}
+    <form onSubmit={handleSubmit} className='RegisterForm__form'>
         <input 
         type="text" 
         value={username}
         onChange={(e)=>setUsername(e.target.value)}
         placeholder='username'
         required
+        className='RegisterForm__username'
         />
         <input
          type="text"
          value={room}
          onChange={(e)=>setRoom(e.target.value)}
-         placeholder='Room Name'
+         placeholder='Room'
          required
+         className='RegisterForm__room'
          />
 
-         <button>Join</button>
+         <button className='RegisterForm__btn'>Join</button>
     </form>
 </div>
   )
