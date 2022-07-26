@@ -2,6 +2,7 @@ import {useEffect,useState,useContext} from 'react';
 import {ConnectionContext} from '../context/connectionContext.js';
 import Message from './Message.js';
 import NewMessageForm from './NewMessageForm.js';
+import '../assets/css/ChatRoom.css'
 
 function ChatRoom() {
     const socket = useContext(ConnectionContext);
@@ -21,7 +22,7 @@ function ChatRoom() {
         <ul className='Chatroom__lists'>
           {message.map(msg=><Message message={msg} id={socket.id} key={msg.id}/>)}
         </ul>
-        
+
          <NewMessageForm />
     </div>
   )
