@@ -7,13 +7,20 @@ function Message({message,id}) {
     <div className='Message'>
 
       {id === message.userId ? (
-        <li className='Message__list'>
-          <div className='Message__username outgoing'>You {moment(message.createdAt).format('h:mm a')} </div>
+        <li className='Message__list outgoing'>
+          <div className='Message__username'>
+            <span className='username'>You</span>
+            <span className='time'>
+              {moment(message.createdAt).format('h:mm A')} </span>
+           </div>
           <div className='Message__details'>{message.msg}</div>
         </li>)
       :(
-        <li className='Message__list'>
-          <div className='Message__username incoming'>{message.username} {moment(message.createdAt).format('h:mm a')} </div>
+        <li className='Message__list incoming'>
+          <div className='Message__username'>
+            <span className='username'>{message.username} </span>
+          <span className='time'>
+              {moment(message.createdAt).format('h:mm A')} </span></div>
         <div className='Message__details'>{message.msg}</div>
         </li>
       )}
