@@ -1,0 +1,76 @@
+.RegisterForm{
+  position: relative;
+  height: 420px;
+  max-width: 375px;
+  min-width: 330px;
+  margin: auto;
+  padding: 60px 60px;
+  background: url(../images/chat_background.jpg) no-repeat   center center #505050;   
+  background-size: cover;
+  box-shadow: 0px 30px 60px -5px #000;
+}
+.RegisterForm__title{
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    margin-top: -10px;
+    text-transform: uppercase;
+}
+.RegisterForm__error{
+    color: red;
+    text-align: center;
+    margin-top: -10px;
+    font-size: 1.2rem;
+}
+.RegisterForm__form label{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 15px;
+    margin-top: 15px;
+    padding-bottom: 5px;
+    font-size: 12px;
+    opacity: 0.8; 
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+    color: #fff;
+}
+.RegisterForm__username,
+.RegisterForm__room{
+    border: none;
+    width: 89%;
+    padding: 10px 20px;
+    display: block;
+    height: 15px;
+    color: #fff;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0);
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+.RegisterForm__username:focus,
+.RegisterForm__room:focus{
+    outline: 0;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0);
+}
+
+.RegisterForm__btn{
+    background-color: #e21111b0;
+    color: #FFF;
+    width: 100%;
+    padding: 10px 20px;
+    display: block;
+    height: 39px;
+    border-radius: 20px;
+    margin-top: 30px;
+    transition: all 0.5s ease-in-out;
+    border: none;
+    text-transform: uppercase;
+  }
+  .RegisterForm__btn:hover{
+    background: #ec0b0b;
+    box-shadow: 0px 4px 35px -5px #ec0b0b;
+    cursor: pointer;
+  }
