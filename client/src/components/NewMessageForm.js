@@ -1,5 +1,6 @@
 import React,{useState,useContext} from 'react';
 import {ConnectionContext} from '../context/connectionContext.js';
+import '../assets/css/NewMessageForm.css'
 
 function NewMessageForm() {
     const socket = useContext(ConnectionContext);
