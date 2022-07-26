@@ -15,13 +15,13 @@ function ChatRoom() {
       return ()=> socket.off('message')
     },[socket,message])
   return (
-    <div>
+    <div className='Chatroom'>
          <h2>Messages</h2>
          
-        <ul>
+        <ul className='Chatroom__lists'>
           {message.map(msg=><Message message={msg} id={socket.id} key={msg.id}/>)}
         </ul>
-
+        
          <NewMessageForm />
     </div>
   )
