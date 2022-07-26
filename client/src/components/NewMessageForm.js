@@ -13,15 +13,16 @@ function NewMessageForm() {
     }
 
   return (
-    <form onSubmit={sendMessage}>
-    <input 
-     type="text" 
-     value={newMessage}
-     onChange={(e)=>setNewMessage(e.target.value)}
-     placeholder='new message'
-     required
-    />
-   <button>Send</button>
+    <form onSubmit={sendMessage} className='NewMessage'>
+      <input 
+        type="text" 
+        value={newMessage}
+        onChange={(e)=>setNewMessage(e.target.value)}
+        placeholder='new message'
+        required
+        className='NewMessage__input'
+      />
+   <button className='NewMessage__btn'>Send</button>
   </form>
   )
 }
