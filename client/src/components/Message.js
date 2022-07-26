@@ -1,11 +1,11 @@
 import React from 'react'
 import moment from 'moment'
 
-function Message({message}) {
+function Message({message,id}) {
   return (
     <div>
         <li>
-            <div>{message.username} {moment(message.createdAt).format('h:mm a')}</div> 
+            <div>{id === message.userId ? 'You' : message.username} {moment(message.createdAt).format('h:mm a')}</div> 
             <div>{message.msg}</div>
         </li>
     </div>
