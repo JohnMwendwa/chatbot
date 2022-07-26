@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from 'moment'
+import '../assets/css/Message.css'
 
 function Message({message,id}) {
   return (
