@@ -1,0 +1,28 @@
+.NewMessage{
+    display: flex;
+    margin-top: auto;
+    padding:10px;
+}
+.NewMessage__input{
+    outline: none;
+    width: 65%;
+    height: 30px;
+    padding: 5px 15px;
+    margin-right: 2px;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px 0 0 5px;
+    font-size: 14px;
+}
+.NewMessage__btn{
+    background-color: #e21111b0;
+    color: #fff;
+    outline:none;
+    width: 20%;
+    height: 42px;
+    padding: 5px 15px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
