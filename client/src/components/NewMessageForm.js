@@ -1,16 +1,22 @@
 import React,{useState,useContext} from 'react';
 import {ConnectionContext} from '../context/connectionContext.js';
 import '../assets/css/NewMessageForm.css'
+import { useNavigate } from 'react-router-dom';
 
 function NewMessageForm() {
-    const socket = useContext(ConnectionContext);
+    const {socket,isConnected} = useContext(ConnectionContext);
     const [newMessage,setNewMessage] = useState('')
+    const navigate = useNavigate()
 
     const sendMessage =(e)=>{
         e.preventDefault();
-        socket.emit('newMessage',newMessage)
-        setNewMessage('')
-        
+        if(isConnected){
+          socket.emit('newMessage',newMessage)
+          setNewMessage('')
+        }else{
+          alert("You've disconnected!")
+          navigate('/') 
+        }   
     }
 
   return (
