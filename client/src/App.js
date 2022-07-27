@@ -1,6 +1,7 @@
 import {Routes,Route} from 'react-router-dom';
 import ChatRoom from './components/ChatRoom';
 import RegisterForm from './components/RegisterForm';
+import './assets/css/App.css'
 
 function App() {
 
