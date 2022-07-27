@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+}
+body{
+    line-height: 1.4;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.App{
+    display: flex;
+}
