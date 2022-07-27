@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import {ConnectionContext} from '../context/connectionContext.js';
 import Message from './Message.js';
 import NewMessageForm from './NewMessageForm.js';
+import LoggedUsers from './LoggedUsers.js';
 import '../assets/css/ChatRoom.css'
 
 function ChatRoom() {
@@ -31,13 +32,19 @@ function ChatRoom() {
     
   return (
     <div className='Chatroom'>
-         <h2>Messages</h2>
-         
+        <div className="Chatroom__sidebar">
+        <LoggedUsers />
+        </div>
+
+      <div className="Chatroom__main">
+        <h2 className='Chatroom__main-title'>Messages</h2>
         <ul className='Chatroom__lists'>
           {message.map(msg=><Message message={msg} id={socket.id} key={msg.id}/>)}
         </ul>
 
          <NewMessageForm />
+      </div>
+      
     </div>
   )
 }
