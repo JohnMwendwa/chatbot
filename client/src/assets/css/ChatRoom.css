@@ -1,0 +1,13 @@
+.Chatroom{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    background-color: #dac0c0bb;
+    min-height: 100vh;
+}
+.Chatroom h2{
+    text-align: center;
+}
+.Chatroom__lists{
+    padding: 20px 30px;
+}
