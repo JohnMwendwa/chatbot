@@ -4,7 +4,7 @@ import {ConnectionContext} from '../context/connectionContext.js';
 import '../assets/css/RegisterForm.css'
 
 function RegisterForm() {
-    const socket = useContext(ConnectionContext);
+    const {socket,setIsConnected} = useContext(ConnectionContext);
     const [username,setUsername] = useState('');
     const [room,setRoom] = useState('');
     const [errorMessage,setErrorMessage] = useState('');
@@ -17,8 +17,9 @@ function RegisterForm() {
             if(error){
               return setErrorMessage(error)
             }
+            setIsConnected(true)
             navigate('/chat')
-            })              
+     })              
     }
     
   return (
