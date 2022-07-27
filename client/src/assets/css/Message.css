@@ -3,26 +3,28 @@
     list-style-type: none;
     max-width: 400px;
     width: 50%;
-    font-size: 1.15rem;
     color: #fff;
-    padding: 10px 10px;
+    padding: 10px ;
     margin-bottom: 10px;
 }
 .Message__list.incoming{
     border-radius: 18px 18px 18px 0;
     background-color: #e21111b0;
+    margin-right: auto;
 }
 .Message__list.outgoing{
     background-color: #2a3530;
     border-radius: 18px 18px 0 18px;
+    margin-left: auto;   
 }
 .Message__username{
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #00000077;
+    border-bottom: 1px solid #ffa8a8dc;
     padding: 5px 10px;
     text-transform: capitalize;
 }
 .Message__details{
-    padding: 5px 10px;
+    padding: 5px ;
+    font-size: 1.2rem;
 }
