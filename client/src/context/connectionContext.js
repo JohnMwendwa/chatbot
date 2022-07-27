@@ -7,8 +7,9 @@ export const ConnectionContext = createContext()
 
 export function ConnectionProvider(props){
     const [isConnected,setIsConnected] = useState(socket.connected)
+    const [roomName,setRoomName] = useState('')
     return (
-    <ConnectionContext.Provider value={{socket,isConnected,setIsConnected}}>
+    <ConnectionContext.Provider value={{socket,isConnected,setIsConnected,roomName,setRoomName}}>
         {props.children}
     </ConnectionContext.Provider> 
     )
