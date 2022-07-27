@@ -1,5 +1,19 @@
 .Chatroom{
     display: flex;
+    width: 100vw;
+}
+.Chatroom__sidebar{
+    height: 100vh;
+    color: white;
+    background: #333744;
+    width: 20%;
+    min-width: 160px;
+    overflow-y: scroll
+}
+
+.Chatroom__main{
+    display: flex;
+    width: 80%;
     flex-grow: 1;
     flex-direction: column;
     background-color: #dac0c0bb;
