@@ -1,7 +1,10 @@
 .NewMessage{
     display: flex;
+    justify-content: center;
+    flex-grow: 1;
     margin-top: auto;
-    padding:10px;
+    padding-bottom: 10px;
+    width: 100%;
 }
 .NewMessage__input{
     outline: none;
