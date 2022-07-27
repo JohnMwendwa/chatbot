@@ -1,7 +1,6 @@
 .NewMessage{
     display: flex;
     justify-content: center;
-    flex-grow: 1;
     margin-top: auto;
     padding-bottom: 10px;
     width: 100%;
