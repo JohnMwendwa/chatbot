@@ -7,7 +7,6 @@ function RegisterForm() {
     const {socket,setIsConnected,setRoomName} = useContext(ConnectionContext);
     const [username,setUsername] = useState('');
     const [room,setRoom] = useState('');
-    const [errorMessage,setErrorMessage] = useState('');
     const navigate = useNavigate();
 
     const handleSubmit = (e)=>{
@@ -15,19 +14,21 @@ function RegisterForm() {
        socket.emit('join',{username,room},(error)=>{
 
             if(error){
-              return setErrorMessage(error)
+              alert(error)
+              navigate('/')
             }
-            setIsConnected(true)
-            setRoomName(room)
-            navigate('/chat')
-     })              
+           
+     })    
+        setIsConnected(true)
+        setRoomName(room)
+        navigate('/chat')          
     }
     
   return (
 <div className='RegisterForm'>
   <h1 className='RegisterForm__title'>Chatbot</h1>
-
-   {errorMessage && <p className='RegisterForm__error'>{errorMessage}</p>}
+{/* 
+   {errorMessage && <p className='RegisterForm__error'>{errorMessage}</p>} */}
    
     <form onSubmit={handleSubmit} className='RegisterForm__form'>
 
