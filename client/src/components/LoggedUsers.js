@@ -1,5 +1,6 @@
 import React,{useContext, useEffect, useState} from 'react'
 import {ConnectionContext} from '../context/connectionContext'
+import '../assets/css/LoggedUsers.css'
 
 function LoggedUsers() {
  const {socket,isConnected,roomName} = useContext(ConnectionContext)
