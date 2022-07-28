@@ -1,20 +1,16 @@
+const path = require('path');
 const http = require('http');
 const express = require('express');
-const cors = require('cors');
 const socketio = require('socket.io')
 const {generateMessage} = require('./utils/message')
-const {addUser,removeUser,getUser,getUsersInRoom} = require('./utils/users')
+const {addUser,removeUser,getUser,getUsersInRoom} = require('./utils/users');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server,{
-    cors:{
-        origin:'http://localhost:3000',
-        methods:['GET','POST']
-    }
-});
-const PORT = process.env.PORT || 3001;
-app.use(cors)
+const io = socketio(server);
+const PORT = process.env.PORT || 3000;
+
+app.use(express.static(path.join(__dirname,'../client/build')))
 
 io.on('connection',(socket)=>{
     socket.on('join',(userDetails,callback)=>{
