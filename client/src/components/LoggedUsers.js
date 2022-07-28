@@ -16,9 +16,9 @@ function LoggedUsers() {
     },[socket,isConnected])
 
   return (
-   <div>
-    <h2>{roomName}</h2>
-     <ul>
+   <div className='LoggedUsers'>
+    <h2 className='LoggedUsers__title'>{roomName}</h2>
+     <ul className='LoggedUsers__list'>
        {loggedInUsers?.map(user=><li key={user.id}>{user.username}</li>)}
     </ul>
    </div>
