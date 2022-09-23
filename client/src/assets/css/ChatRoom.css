@@ -1,27 +1,41 @@
-.Chatroom{
-    display: flex;
-    width: 100vw;
+.Chatroom {
+  display: flex;
+  min-width: 100vw;
+  height: 100vh;
 }
-.Chatroom__sidebar{
-    height: 100vh;
-    color: white;
-    background: #333744;
-    width: 20%;
-    min-width: 160px;
-    overflow-y: scroll
+.Chatroom__sidebar {
+  height: 100vh;
+  color: white;
+  background: #333744;
+  width: 20%;
+  max-width: 220px;
+  overflow-y: scroll;
 }
 
-.Chatroom__main{
-    display: flex;
+.Chatroom__main {
+  display: flex;
+  width: 80%;
+  flex-grow: 1;
+  flex-direction: column;
+  background-color: #dac0c0bb;
+  min-height: 100vh;
+}
+.Chatroom h2 {
+  text-align: center;
+}
+.Chatroom__lists {
+  padding: 20px 30px;
+}
+
+@media (max-width: 450px) {
+  .Chatroom__sidebar {
+    width: 80px;
+    overflow-x: scroll;
+  }
+  .Chatroom__main {
     width: 80%;
-    flex-grow: 1;
-    flex-direction: column;
-    background-color: #dac0c0bb;
-    min-height: 100vh;
-}
-.Chatroom h2{
-    text-align: center;
-}
-.Chatroom__lists{
-    padding: 20px 30px;
+  }
+  .Chatroom__lists {
+    padding: 3px 6px;
+  }
 }
