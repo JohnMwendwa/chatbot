@@ -1,30 +1,43 @@
+.Message__list {
+  list-style-type: none;
+  max-width: 400px;
+  width: 50%;
+  color: #fff;
+  padding: 10px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+}
+.Message__list.incoming {
+  border-radius: 10px 10px 10px 0;
+  background-color: #e21111b0;
+  margin-right: auto;
+}
+.Message__list.outgoing {
+  background-color: #2a3530;
+  border-radius: 10px 10px 0 10px;
+  margin-left: auto;
+}
+.Message__username {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffa8a8dc;
+  padding: 5px 10px;
+  text-transform: capitalize;
+}
+.Message__details {
+  padding: 5px;
+  font-size: 1.2rem;
+}
 
-.Message__list{
-    list-style-type: none;
-    max-width: 400px;
-    width: 50%;
-    color: #fff;
-    padding: 10px ;
-    margin-bottom: 10px;
-}
-.Message__list.incoming{
-    border-radius: 18px 18px 18px 0;
-    background-color: #e21111b0;
-    margin-right: auto;
-}
-.Message__list.outgoing{
-    background-color: #2a3530;
-    border-radius: 18px 18px 0 18px;
-    margin-left: auto;   
-}
-.Message__username{
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #ffa8a8dc;
+@media (max-width: 450px) {
+  .Message__list {
     padding: 5px 10px;
-    text-transform: capitalize;
-}
-.Message__details{
-    padding: 5px ;
-    font-size: 1.2rem;
+    width: 60%;
+  }
+  .Message__username {
+    font-size: 14px;
+  }
+  .Message__details {
+    font-size: 14px;
+  }
 }
