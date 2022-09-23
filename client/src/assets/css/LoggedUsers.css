@@ -1,12 +1,12 @@
-
-.LoggedUsers__title{
-    background-color: #e21111b0;
-    padding: 10px 0;
+.LoggedUsers__title {
+  background-color: #e21111b0;
+  padding: 10px 0;
+  width: fit-content;
 }
-.LoggedUsers__list{
-    margin-top: 20px;
+.LoggedUsers__list {
+  margin-top: 20px;
 }
-.LoggedUsers__list li{
-    list-style:decimal;
-    text-transform: capitalize;
+.LoggedUsers__list li {
+  list-style: decimal;
+  text-transform: capitalize;
 }
